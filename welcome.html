@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome to the Pure Impact Academy</title>
-<meta name="description" content="Your Pure Impact Academy membership is confirmed. Here's how to get started.">
+<title>Welcome to Pure Impact Academy — You're In</title>
+<meta name="description" content="Welcome to the Pure Impact Academy. Here's how to get started with your coaching inside CoachNow.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --black: #0a0a0a;
@@ -16,125 +16,336 @@
     --gold: #c8a24a;
     --gold-bright: #e0b95c;
     --white: #ffffff;
-    --off: #c9c9c2;
-    --fog: #8a8a82;
+    --off: #c9c9c9;
+    --line: rgba(200, 162, 74, 0.22);
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', system-ui, sans-serif; color: var(--white); background: var(--black); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
-  a { color: inherit; text-decoration: none; }
-  h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; }
 
-  nav { padding: 1.2rem 2rem; border-bottom: 1px solid rgba(200,162,74,0.2); text-align: center; }
-  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
-  .nav-logo span { color: var(--gold); }
+  html { scroll-behavior: smooth; }
 
-  .wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 3rem 1.5rem; }
-  .card { max-width: 640px; width: 100%; text-align: center; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
 
-  .check { width: 84px; height: 84px; border-radius: 50%; background: rgba(200,162,74,0.12); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; }
-  .check svg { width: 42px; height: 42px; }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
-  .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-  h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; text-transform: uppercase; line-height: 0.98; margin-bottom: 1.2rem; }
-  h1 span { color: var(--gold); }
-  .lead { font-size: 1.15rem; color: var(--off); line-height: 1.7; margin-bottom: 2.5rem; }
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 88px 0 64px;
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(20, 36, 26, 0.9) 0%, rgba(10, 10, 10, 0) 70%),
+      var(--black);
+    border-bottom: 1px solid var(--line);
+  }
 
-  .steps { text-align: left; background: var(--deep); border: 1px solid rgba(200,162,74,0.15); border-radius: 8px; padding: 2rem; margin-bottom: 2.5rem; }
-  .steps h2 { font-size: 1.5rem; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; text-align: center; }
-  .step-row { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.06); }
-  .step-row:first-of-type { border-top: none; }
-  .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--gold); line-height: 1; flex-shrink: 0; width: 1.5rem; }
-  .step-row h3 { font-size: 1.2rem; text-transform: uppercase; margin-bottom: 0.2rem; }
-  .step-row p { font-size: 0.95rem; color: var(--fog); line-height: 1.6; }
+  .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
 
-  .app-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-  .app-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
-  .btn-app { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--gold); color: var(--black); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.85rem 1.6rem; border-radius: 2px; transition: background 0.2s; }
-  .btn-app:hover { background: var(--gold-bright); }
-  .btn-app svg { width: 22px; height: 22px; }
+  .checkmark {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 26px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    box-shadow: 0 0 36px rgba(200, 162, 74, 0.25);
+  }
+  .checkmark svg { width: 30px; height: 30px; }
 
-  .note { font-size: 1.05rem; color: var(--off); line-height: 1.7; background: rgba(200,162,74,0.06); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; text-align: left; border-radius: 0 4px 4px 0; margin-bottom: 2.5rem; }
-  .note strong { color: var(--white); }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 8vw, 4.2rem);
+    line-height: 0.96;
+    letter-spacing: 0.01em;
+  }
+  .hero h1 .gold { color: var(--gold); }
 
-  .home-link { font-size: 0.9rem; color: var(--fog); }
-  .home-link a { color: var(--gold); border-bottom: 1px solid var(--gold); }
+  .hero p {
+    margin: 22px auto 0;
+    max-width: 520px;
+    color: var(--off);
+    font-size: 1.12rem;
+  }
 
-  footer { border-top: 1px solid rgba(200,162,74,0.2); color: var(--fog); text-align: center; padding: 2rem; font-size: 0.85rem; }
-  footer a { color: var(--gold); margin: 0 0.6rem; }
+  /* ---------- Steps ---------- */
+  .steps {
+    padding: 64px 0 24px;
+  }
 
-  @media (max-width: 600px) {
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--off);
+    margin-bottom: 48px;
+  }
+
+  .step {
+    display: flex;
+    gap: 22px;
+    padding: 0 0 40px;
+    position: relative;
+  }
+
+  .step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 56px;
+    bottom: 4px;
+    width: 2px;
+    background: linear-gradient(var(--line), rgba(200,162,74,0.04));
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--deep);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-body { padding-top: 4px; }
+
+  .step-body h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+
+  .step-body p {
+    color: var(--off);
+    font-size: 1.04rem;
+  }
+  .step-body p .hl { color: var(--gold-bright); font-weight: 600; }
+
+  /* ---------- App buttons ---------- */
+  .app-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .app-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    color: #000;
+    text-decoration: none;
+    padding: 11px 20px 11px 18px;
+    border-radius: 10px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .app-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .app-btn svg { width: 26px; height: 26px; flex-shrink: 0; }
+  .app-btn .small { font-size: 0.62rem; line-height: 1; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; }
+  .app-btn .big { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.15rem; line-height: 1.1; }
+
+  /* ---------- Callout ---------- */
+  .callout {
+    margin: 28px 0 0;
+    background: var(--green);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .callout strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold-bright);
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .callout p { color: var(--off); font-size: 1rem; }
+
+  /* ---------- What to expect ---------- */
+  .expect {
+    margin-top: 24px;
+    padding: 48px 0 56px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  .expect h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    margin-bottom: 16px;
+  }
+  .expect p {
+    max-width: 540px;
+    margin: 0 auto 14px;
+    color: var(--off);
+    font-size: 1.08rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 36px 0 48px;
+    border-top: 1px solid var(--line);
+  }
+  footer .mark {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  footer .mark .gold { color: var(--gold); }
+  footer a { color: var(--gold-bright); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .help { color: var(--off); font-size: 0.98rem; }
+
+  @media (max-width: 480px) {
     .app-buttons { flex-direction: column; }
-    .btn-app { justify-content: center; }
+    .app-btn { width: 100%; justify-content: center; }
+    .step { gap: 16px; }
   }
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-logo">PURE <span>IMPACT</span> ACADEMY</div>
-</nav>
 
-<div class="wrap">
-  <div class="card">
-    <div class="check">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="checkmark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <div class="eyebrow">Pure Impact Academy</div>
+      <h1>You're <span class="gold">In.</span></h1>
+      <p>Your payment went through and your spot in the Academy is confirmed. Let's get you set up — it takes about two minutes.</p>
     </div>
+  </header>
 
-    <p class="eyebrow">Payment Confirmed</p>
-    <h1>Welcome to the <span>Academy.</span></h1>
-    <p class="lead">You're in, and I'm glad to have you. Your membership is active &mdash; here's how to get started so we can begin working on your game together.</p>
+  <!-- STEPS -->
+  <section class="steps">
+    <div class="wrap">
+      <div class="section-label">Getting Started</div>
+      <p class="section-sub">Follow these steps in order.</p>
 
-    <div class="steps">
-      <h2>Your Next Steps</h2>
-      <div class="step-row">
+      <!-- Step 1 -->
+      <div class="step">
         <div class="step-num">1</div>
-        <div>
+        <div class="step-body">
           <h3>Download CoachNow</h3>
-          <p>All of your coaching happens inside the free CoachNow app. Grab it below on your phone.</p>
+          <p>All your coaching happens inside the free <span class="hl">CoachNow</span> app. Grab it on your phone or tablet now.</p>
+          <div class="app-buttons">
+            <a class="app-btn" href="https://apps.apple.com/us/app/coachnow-sports-coaching-app/id596598472" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.28-1.27 3.14-2.53.99-1.45 1.4-2.85 1.42-2.93-.03-.01-2.72-1.04-2.75-4.13zM14.6 4.45c.71-.87 1.19-2.07 1.06-3.27-1.03.04-2.27.69-3.01 1.55-.66.76-1.24 1.99-1.08 3.16 1.15.09 2.32-.58 3.03-1.44z"/></svg>
+              <span><span class="small">Download on the</span><br><span class="big">App Store</span></span>
+            </a>
+            <a class="app-btn" href="https://play.google.com/store/search?q=coachnow&c=apps" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l.1.1L13 12.6v-.2L3.7 2.3l-.1.1z" transform="translate(0 0)"/><path fill="#34A853" d="M16.3 15.9 13 12.6v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.3l-3.9 2.2-.1-.1z"/><path fill="#4285F4" d="M16.4 15.8 13 12.5 3.6 21.9c.4.4 1 .4 1.7.1l11.1-6.2"/><path fill="#FBBC04" d="M16.4 9.2 5.3 3C4.6 2.6 4 2.7 3.6 3.1l9.4 9.4 3.4-3.3z"/></svg>
+              <span><span class="small">Get it on</span><br><span class="big">Google Play</span></span>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="step-row">
+
+      <!-- Step 2 -->
+      <div class="step">
         <div class="step-num">2</div>
-        <div>
-          <h3>Watch For My Welcome</h3>
-          <p>I'll personally welcome you into the Academy and add you to the group. Keep an eye on your email &mdash; including your spam folder, just in case.</p>
+        <div class="step-body">
+          <h3>Watch for Your Invitation</h3>
+          <p>I'll personally send you an invitation to join <span class="hl">The Pure Impact Academy</span> group. It comes by email or text — keep an eye out for it shortly.</p>
         </div>
       </div>
-      <div class="step-row">
+
+      <!-- Step 3 -->
+      <div class="step">
         <div class="step-num">3</div>
-        <div>
-          <h3>Post Your First Swing</h3>
-          <p>Once you're in, send through a swing and we'll get started. No rush &mdash; this is a long-term program, and I'll keep you on track.</p>
+        <div class="step-body">
+          <h3>Accept the Invitation</h3>
+          <p>Tap the link in the invite and accept. Use the <span class="hl">same email address you paid with</span> if you can — it keeps everything matched up and makes setup seamless.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Log In — and You're Coaching</h3>
+          <p>Once you log in to CoachNow, the Academy group appears automatically. That's it. Post your first swing whenever you're ready and we'll get to work.</p>
+          <div class="callout">
+            <strong>Didn't get an invite?</strong>
+            <p>If you haven't received your invitation within 24 hours, just email me at contact@pureimpactgolf.online and I'll sort it out right away.</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <p class="app-label">Download the CoachNow App</p>
-    <div class="app-buttons">
-      <a href="https://apps.apple.com/app/coachnow/id524339108" target="_blank" rel="noopener" class="btn-app">
-        <svg viewBox="0 0 24 24" fill="#0a0a0a"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.29-.05 1.78-.84 3.34-.84 1.56 0 2 .84 3.37.81 1.39-.02 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.7-1.04-2.73-4.13zM14.6 4.42c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3 1.55-.66.77-1.23 2-1.08 3.17 1.14.09 2.31-.58 3.02-1.45z"/></svg>
-        App Store
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.coachnow" target="_blank" rel="noopener" class="btn-app">
-        <svg viewBox="0 0 24 24" fill="#0a0a0a"><path d="M3.6 1.8c-.25.27-.4.68-.4 1.22v17.96c0 .54.15.95.4 1.22l.06.06L13.8 12.07v-.14L3.66 1.74l-.06.06zM17.2 15.47l-3.4-3.4v-.14l3.4-3.4.08.05 4.03 2.29c1.15.65 1.15 1.72 0 2.38l-4.03 2.29-.08-.06zM13.8 12.07l3.4 3.4-9.8 5.57c-.38.22-.74.21-1.04.01l7.44-8.98zM6.36 2.95c.3-.2.66-.21 1.04.01l9.8 5.57-3.4 3.4L6.36 2.95z"/></svg>
-        Google Play
-      </a>
+  <!-- WHAT TO EXPECT -->
+  <section class="expect">
+    <div class="wrap">
+      <h2>What Happens Next</h2>
+      <p>This isn't a quick-fix lesson. It's long-term coaching built to keep you improving for good.</p>
+      <p>Post your swings inside CoachNow and I'll review them personally during the week — with clear, honest feedback focused on what actually moves the ball. No overload, no twelve swing thoughts. Just the things that matter for your game.</p>
     </div>
+  </section>
 
-    <div class="note">
-      <strong>One important note:</strong> access to the Academy group is added by me personally, so there may be a short wait before you're inside. If you haven't heard from me within a day, just email <a href="mailto:contact@pureimpactgolf.online" style="color:var(--gold);">contact@pureimpactgolf.online</a> and I'll sort it out right away.
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="mark">Pure <span class="gold">Impact</span> Academy</div>
+      <p class="help">Questions? <a href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a></p>
     </div>
-
-    <p class="home-link">&larr; <a href="https://pureimpactgolf.online">Back to pureimpactgolf.online</a></p>
-  </div>
-</div>
-
-<footer>
-  <p>&copy; 2026 Pure Impact Golf &middot; Grant Garrison PGA</p>
-  <div style="margin-top:0.6rem;">
-    <a href="https://www.youtube.com/@PureImpactGolf" target="_blank" rel="noopener">YouTube</a>
-    <a href="mailto:contact@pureimpactgolf.online">Contact</a>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
