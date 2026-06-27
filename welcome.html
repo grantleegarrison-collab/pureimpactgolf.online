@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to the Pure Impact Academy</title>
+<meta name="description" content="Your Pure Impact Academy membership is confirmed. Here's how to get started.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --deep: #111813;
+    --green: #14241a;
+    --gold: #c8a24a;
+    --gold-bright: #e0b95c;
+    --white: #ffffff;
+    --off: #c9c9c2;
+    --fog: #8a8a82;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--white); background: var(--black); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; }
+
+  nav { padding: 1.2rem 2rem; border-bottom: 1px solid rgba(200,162,74,0.2); text-align: center; }
+  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+  .nav-logo span { color: var(--gold); }
+
+  .wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 3rem 1.5rem; }
+  .card { max-width: 640px; width: 100%; text-align: center; }
+
+  .check { width: 84px; height: 84px; border-radius: 50%; background: rgba(200,162,74,0.12); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; }
+  .check svg { width: 42px; height: 42px; }
+
+  .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; text-transform: uppercase; line-height: 0.98; margin-bottom: 1.2rem; }
+  h1 span { color: var(--gold); }
+  .lead { font-size: 1.15rem; color: var(--off); line-height: 1.7; margin-bottom: 2.5rem; }
+
+  .steps { text-align: left; background: var(--deep); border: 1px solid rgba(200,162,74,0.15); border-radius: 8px; padding: 2rem; margin-bottom: 2.5rem; }
+  .steps h2 { font-size: 1.5rem; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; text-align: center; }
+  .step-row { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .step-row:first-of-type { border-top: none; }
+  .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--gold); line-height: 1; flex-shrink: 0; width: 1.5rem; }
+  .step-row h3 { font-size: 1.2rem; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .step-row p { font-size: 0.95rem; color: var(--fog); line-height: 1.6; }
+
+  .app-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .app-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-app { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--gold); color: var(--black); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.85rem 1.6rem; border-radius: 2px; transition: background 0.2s; }
+  .btn-app:hover { background: var(--gold-bright); }
+  .btn-app svg { width: 22px; height: 22px; }
+
+  .note { font-size: 1.05rem; color: var(--off); line-height: 1.7; background: rgba(200,162,74,0.06); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; text-align: left; border-radius: 0 4px 4px 0; margin-bottom: 2.5rem; }
+  .note strong { color: var(--white); }
+
+  .home-link { font-size: 0.9rem; color: var(--fog); }
+  .home-link a { color: var(--gold); border-bottom: 1px solid var(--gold); }
+
+  footer { border-top: 1px solid rgba(200,162,74,0.2); color: var(--fog); text-align: center; padding: 2rem; font-size: 0.85rem; }
+  footer a { color: var(--gold); margin: 0 0.6rem; }
+
+  @media (max-width: 600px) {
+    .app-buttons { flex-direction: column; }
+    .btn-app { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">PURE <span>IMPACT</span> ACADEMY</div>
+</nav>
+
+<div class="wrap">
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+
+    <p class="eyebrow">Payment Confirmed</p>
+    <h1>Welcome to the <span>Academy.</span></h1>
+    <p class="lead">You're in, and I'm glad to have you. Your membership is active &mdash; here's how to get started so we can begin working on your game together.</p>
+
+    <div class="steps">
+      <h2>Your Next Steps</h2>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Download CoachNow</h3>
+          <p>All of your coaching happens inside the free CoachNow app. Grab it below on your phone.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Watch For My Welcome</h3>
+          <p>I'll personally welcome you into the Academy and add you to the group. Keep an eye on your email &mdash; including your spam folder, just in case.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Post Your First Swing</h3>
+          <p>Once you're in, send through a swing and we'll get started. No rush &mdash; this is a long-term program, and I'll keep you on track.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="app-label">Download the CoachNow App</p>
+    <div class="app-buttons">
+      <a href="https://apps.apple.com/app/coachnow/id524339108" target="_blank" rel="noopener" class="btn-app">
+        <svg viewBox="0 0 24 24" fill="#0a0a0a"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.29-.05 1.78-.84 3.34-.84 1.56 0 2 .84 3.37.81 1.39-.02 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.7-1.04-2.73-4.13zM14.6 4.42c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3 1.55-.66.77-1.23 2-1.08 3.17 1.14.09 2.31-.58 3.02-1.45z"/></svg>
+        App Store
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.coachnow" target="_blank" rel="noopener" class="btn-app">
+        <svg viewBox="0 0 24 24" fill="#0a0a0a"><path d="M3.6 1.8c-.25.27-.4.68-.4 1.22v17.96c0 .54.15.95.4 1.22l.06.06L13.8 12.07v-.14L3.66 1.74l-.06.06zM17.2 15.47l-3.4-3.4v-.14l3.4-3.4.08.05 4.03 2.29c1.15.65 1.15 1.72 0 2.38l-4.03 2.29-.08-.06zM13.8 12.07l3.4 3.4-9.8 5.57c-.38.22-.74.21-1.04.01l7.44-8.98zM6.36 2.95c.3-.2.66-.21 1.04.01l9.8 5.57-3.4 3.4L6.36 2.95z"/></svg>
+        Google Play
+      </a>
+    </div>
+
+    <div class="note">
+      <strong>One important note:</strong> access to the Academy group is added by me personally, so there may be a short wait before you're inside. If you haven't heard from me within a day, just email <a href="mailto:contact@pureimpactgolf.online" style="color:var(--gold);">contact@pureimpactgolf.online</a> and I'll sort it out right away.
+    </div>
+
+    <p class="home-link">&larr; <a href="https://pureimpactgolf.online">Back to pureimpactgolf.online</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Pure Impact Golf &middot; Grant Garrison PGA</p>
+  <div style="margin-top:0.6rem;">
+    <a href="https://www.youtube.com/@PureImpactGolf" target="_blank" rel="noopener">YouTube</a>
+    <a href="mailto:contact@pureimpactgolf.online">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
