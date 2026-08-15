@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pure Impact Academy – Find the Swing That Works for You</title>
-<meta name="description" content="Join the Pure Impact Academy. Long-term online golf coaching led by PGA Professional Grant Garrison, built on one belief: every golfer can find the swing that works for them. First month just $1.">
+<title>Pure Impact Online Coaching – Stop Guessing What to Work On</title>
+<meta name="description" content="Personal online golf coaching with PGA Professional Grant Garrison. Send your swing, get personal feedback, and know exactly what to work on next.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -71,7 +71,7 @@
   .claim-list strong { color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
 
   /* HOW IT WORKS */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
   .step { text-align: center; padding: 2rem 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(200,162,74,0.15); border-radius: 6px; }
   .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; }
   .step h3 { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; margin: 0.5rem 0 0.6rem; }
@@ -107,6 +107,10 @@
   footer { background: var(--black); border-top: 1px solid rgba(200,162,74,0.2); color: var(--fog); text-align: center; padding: 2.5rem; font-size: 0.85rem; }
   footer a { color: var(--gold); margin: 0 0.6rem; }
 
+  @media (max-width: 1050px) and (min-width: 801px) {
+    .steps { grid-template-columns: repeat(2, 1fr); }
+  }
+
   @media (max-width: 800px) {
     .hero-inner { padding: 0 1.5rem 3.5rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -119,12 +123,12 @@
 </head>
 <body>
 <nav>
-  <div class="nav-logo">PURE <span>IMPACT</span> ACADEMY</div>
+  <div class="nav-logo">PURE <span>IMPACT</span> COACHING</div>
   <div class="nav-links">
     <a href="#philosophy">Philosophy</a>
-    <a href="#academy">The Academy</a>
+    <a href="#coaching">The Coaching</a>
     <a href="#how">How It Works</a>
-    <a href="#join" class="nav-cta">Come In For $1</a>
+    <a href="#join" class="nav-cta">Start Coaching</a>
   </div>
 </nav>
 
@@ -132,11 +136,11 @@
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <p class="hero-eyebrow">Pure Impact Academy</p>
-    <h1 class="hero-headline">Find the swing that <span>works for you.</span></h1>
-    <p class="hero-sub">Join a small group of golfers learning to improve where it actually counts &mdash; at impact. Come inside for a month and see if it's your kind of place.</p>
-    <a href="https://buy.stripe.com/9B66oH33M4Hp5OieHe2Fa0l?prefilled_promo_code=VISIT" class="btn-gold">Come In For $1 &rarr;</a>
-    <p class="hero-offer">First month just $1, then US$39/month. Cancel anytime.</p>
+    <p class="hero-eyebrow">Personal Online Golf Coaching</p>
+    <h1 class="hero-headline">Stop guessing what to <span>work on.</span></h1>
+    <p class="hero-sub">Send me your golf swing. I’ll personally review it, explain what is actually affecting your impact and ball flight, and give you a clear direction for what to work on next.</p>
+    <a href="https://buy.stripe.com/5kQ7sL1ZIc9R1y2bv22Fa0n" class="btn-gold">Start Personal Coaching &rarr;</a>
+    <p class="hero-offer">US$49/month &middot; Personal coaching through CoachNow &middot; Cancel anytime.</p>
   </div>
 </div>
 
@@ -147,7 +151,7 @@
     <h2 class="headline">Most instruction has it <span>backwards.</span></h2>
     <p class="body-text">Mainstream teaching obsesses over swing positions and perfect form. After 40 years on lesson tees, I've watched too many good golfers get buried under positions, angles, and checklists &mdash; chasing someone else's idea of a "correct" swing while their own game falls apart.</p>
     <div class="big-quote">I teach the opposite. Master what happens at impact, and the ball obeys.</div>
-    <p class="body-text">That's the truth I'm happy to ruffle a few feathers telling. It's the belief this whole Academy is built on.</p>
+    <p class="body-text">That's the truth I'm happy to ruffle a few feathers telling. It's the belief all my coaching is built on.</p>
     <div class="video-wrap" style="margin-top:3rem;margin-bottom:0;">
       <iframe src="https://www.youtube.com/embed/9LaL6h5PjCg?si=1s9T88hiyZdun2Fn" title="Pure Impact Golf demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
@@ -165,13 +169,13 @@
   </div>
 </section>
 
-<!-- WHY LONG TERM -->
+<!-- WHY ONGOING COACHING -->
 <section class="green-bg">
   <div class="container">
-    <p class="eyebrow">Why The Academy</p>
-    <h2 class="headline">One lesson won't fix <span>your golf.</span></h2>
-    <p class="body-text">In 40 years of coaching, I've learned a hard truth: very few golfers get meaningfully better from a single swing diagnosis. Real improvement takes time. It comes from staying on the right path &mdash; with the right information, reinforced consistently, week after week.</p>
-    <p class="body-text">That's exactly what the Academy is. I keep you on track. Sometimes that's a quick comment on a swing you've posted; other times it's a full video breakdown. Either way, you're never left guessing or drifting back into old habits.</p>
+    <p class="eyebrow">Why Ongoing Coaching</p>
+    <h2 class="headline">You don’t need more tips. <span>You need direction.</span></h2>
+    <p class="body-text">The problem for most golfers isn’t a lack of information. It’s knowing which information actually applies to their swing. One video says one thing, the next says the opposite, and before long you’re working on five different ideas at once.</p>
+    <p class="body-text">My job is to cut through that noise. I look at your swing and ball flight, identify what matters most right now, and keep you working in the right direction as your swing changes.</p>
   </div>
 </section>
 
@@ -191,17 +195,17 @@
   </div>
 </section>
 
-<!-- INSIDE THE ACADEMY -->
-<section class="deep" id="academy">
+<!-- PERSONAL COACHING -->
+<section class="deep" id="coaching">
   <div class="container">
-    <p class="eyebrow">Inside the Academy</p>
-    <h2 class="headline">A small group. <span>Closer to me.</span></h2>
-    <p class="body-text">It's not a video library you watch alone, and it's not a one-off swing review. It's a small, private group of like-minded golfers &mdash; led by me &mdash; all working on the same thing in the same way, inside the CoachNow app.</p>
+    <p class="eyebrow">What You Get</p>
+    <h2 class="headline">Your swing. <span>My eyes on it.</span></h2>
+    <p class="body-text">This isn’t a course or a library of generic swing tips. It’s personal online coaching with me through the CoachNow app. You send me what you’re working on, I review it, and I help you understand what matters next.</p>
     <ul class="claim-list">
-      <li><div><strong>Swing Submission</strong>Upload your golf swing and get regular evaluation from me &mdash; so you always know what's working and what's next.</div></li>
-      <li><div><strong>Tips &amp; Lessons</strong>Posted regularly in the group &mdash; clear, practical coaching you can take straight to the range.</div></li>
-      <li><div><strong>Wins &amp; Achievements</strong>Celebrate the breakthroughs together. Every good round and small victory gets shared with the group.</div></li>
-      <li><div><strong>Q&amp;A</strong>Ask your questions and let's have a conversation &mdash; real answers from me, not a faceless app.</div></li>
+      <li><div><strong>Personal Swing Reviews</strong>Send me your swing as you work on your game. I’ll assess what I see, what the ball is telling us, and where your attention should go next.</div></li>
+      <li><div><strong>Clear Practice Direction</strong>No ten-point checklist. I’ll simplify the problem and give you something specific and useful to work on.</div></li>
+      <li><div><strong>Ongoing Follow-Up</strong>Work on the change, send another swing, and we keep building from there instead of starting from scratch every time.</div></li>
+      <li><div><strong>Direct Access to Me</strong>Ask questions inside CoachNow and get answers from the coach who is actually following your swing and your progress.</div></li>
     </ul>
   </div>
 </section>
@@ -210,22 +214,27 @@
 <section id="how">
   <div class="container">
     <p class="eyebrow">How It Works</p>
-    <h2 class="headline">Getting started <span>is simple.</span></h2>
+    <h2 class="headline">Simple coaching. <span>No guesswork.</span></h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Come In For $1</h3>
-        <p>Your first month is just $1. Join in a couple of minutes, cancel anytime.</p>
+        <h3>Join</h3>
+        <p>Start your personal coaching membership for US$49/month and get access to our private CoachNow space.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>Download CoachNow</h3>
-        <p>Grab the free CoachNow app &mdash; it's where the group and all your coaching lives.</p>
+        <h3>Send Your Swing</h3>
+        <p>Upload a swing video and tell me what you’re seeing, feeling, or struggling with.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>Get Welcomed In</h3>
-        <p>I'll welcome you into the group personally and help you get settled.</p>
+        <h3>I Review It</h3>
+        <p>I personally assess your swing, impact and ball flight, then explain what I believe matters most.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Keep Improving</h3>
+        <p>Work on the change, send me your progress, ask questions, and we keep moving your game forward.</p>
       </div>
     </div>
   </div>
@@ -243,7 +252,7 @@
         <img src="3-headshot.jpg" alt="Grant Garrison headshot" class="about-head">
         <h2 class="headline" style="font-size:2.2rem;">Grant Garrison</h2>
         <p class="eyebrow" style="margin-top:0.3rem;">PGA Professional &middot; 40 Years Coaching</p>
-        <p class="body-text" style="margin-top:1.2rem;">Pure Impact Academy was built for golfers who are tired of chasing quick fixes and ready to make real, lasting improvement. My coaching is designed to simplify the game by focusing on what truly matters &mdash; helping you understand your swing, improve your impact, and play your best golf with confidence, all alongside a community that's on the same journey.</p>
+        <p class="body-text" style="margin-top:1.2rem;">I’ve spent 40 years coaching golfers, and the biggest lesson is simple: every golfer is different. I’m not here to rebuild your swing into somebody else’s model. I’m here to look at <em>your</em> motion, understand <em>your</em> ball flight, and help you improve the impact conditions that actually control the shot.</p>
       </div>
     </div>
   </div>
@@ -271,17 +280,17 @@
 <!-- JOIN -->
 <section class="join" id="join">
   <div class="container">
-    <p class="eyebrow">Come For a Visit</p>
-    <h2 class="headline">Come in for a month and <span>see if it's your kind of place.</span></h2>
-    <p class="body-text" style="margin:0 auto;">A dollar gets you inside: meet the group, see how I coach, and decide for yourself. No pressure either way.</p>
+    <p class="eyebrow">Personal Online Coaching</p>
+    <h2 class="headline">Ready to stop guessing <span>and start improving?</span></h2>
+    <p class="body-text" style="margin:0 auto;">Send me your swing and let me help you understand what is actually happening. You’ll get personal feedback, clear practice direction, and ongoing coaching as your swing develops.</p>
     <div class="price-card">
-      <div class="price">$1<span> first month</span></div>
-      <div class="price-label">Pure Impact Academy Membership</div>
-      <div class="price-after">then US$39/month &middot; cancel anytime</div>
-      <a href="https://buy.stripe.com/9B66oH33M4Hp5OieHe2Fa0l?prefilled_promo_code=VISIT" class="btn-gold">Come In For $1 &rarr;</a>
+      <div class="price">US$49<span> / month</span></div>
+      <div class="price-label">Pure Impact Personal Online Coaching</div>
+      <div class="price-after">Personal coaching through CoachNow &middot; cancel anytime</div>
+      <a href="https://buy.stripe.com/5kQ7sL1ZIc9R1y2bv22Fa0n" class="btn-gold">Start Personal Coaching &rarr;</a>
     </div>
-    <p class="scarcity-line">I keep each group small and personal &mdash; so I genuinely know every golfer in it. When the current group is full, it closes, and the next person joins a waitlist for the next one to open.</p>
-    <p class="join-note">Cancel anytime. No contracts. No gimmicks.</p>
+    <p class="scarcity-line">I keep the coaching membership intentionally small so I can personally follow the golfers I’m working with. If I reach the point where I can’t maintain that standard, I’ll close new memberships until space opens.</p>
+    <p class="join-note">No contracts. Cancel anytime.</p>
   </div>
 </section>
 
@@ -289,8 +298,8 @@
 <section class="deep contact">
   <div class="container">
     <p class="eyebrow">Get in Touch</p>
-    <h2 class="headline">Questions before <span>you visit?</span></h2>
-    <p class="body-text" style="margin:0 auto 1.5rem;">Reach out anytime &mdash; I'm happy to help you decide if the Academy is right for you.</p>
+    <h2 class="headline">Questions before <span>you join?</span></h2>
+    <p class="body-text" style="margin:0 auto 1.5rem;">Reach out anytime &mdash; I’m happy to answer questions and help you decide whether this style of coaching is right for you.</p>
     <a href="mailto:contact@pureimpactgolf.online" class="email">contact@pureimpactgolf.online</a>
   </div>
 </section>
