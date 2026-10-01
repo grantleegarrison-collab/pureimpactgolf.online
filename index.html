@@ -360,5 +360,19 @@
   </div>
 </footer>
 
+<script>
+  function playControlsVideo(button) {
+    const frame = button.parentElement;
+    const iframe = document.createElement('iframe');
+
+    iframe.src = 'https://www.youtube.com/embed/VxVM7Wi8Gig?autoplay=1&rel=0';
+    iframe.title = 'I Don\u2019t Teach a Model Swing. I Teach Controls';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+
+    frame.replaceChildren(iframe);
+  }
+</script>
+
 </body>
 </html>
