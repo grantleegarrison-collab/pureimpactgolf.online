@@ -66,8 +66,11 @@
     }
     .hero::before{
       content:"";position:absolute;inset:0;z-index:-2;
-      background:url('0-impact-banner.jpg') center 42%/cover no-repeat;
-      transform:scale(1.01)
+      background-color:var(--bg);
+      background-image:url('0-impact-banner.jpg');
+      background-position:center top;
+      background-size:100% auto;
+      background-repeat:no-repeat
     }
     .hero::after{
       content:"";position:absolute;inset:0;z-index:-1;
@@ -177,7 +180,7 @@
     }
     @media (max-width:600px){
       .hero{min-height:700px;padding:76px 0 46px}
-      .hero::before{background-position:58% center}
+      .hero::before{background-position:center 18px;background-size:auto 360px}
       .hero::after{background:linear-gradient(0deg,rgba(4,16,27,.98) 0%,rgba(4,16,27,.84) 54%,rgba(4,16,27,.28) 100%)}
       .section{padding:48px 0}
       .steps{grid-template-columns:1fr}
