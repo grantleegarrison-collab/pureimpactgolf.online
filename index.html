@@ -6,6 +6,8 @@
   <title>Online Golf Lesson + Follow-Up | Pure Impact Golf</title>
   <meta name="description" content="Stop guessing what to change in your golf swing. Get one personal online lesson and one follow-up review with Grant Garrison PGA through CoachNow. US$99 one-time." />
   <meta name="theme-color" content="#071725" />
+  <link rel="canonical" href="https://pureimpactgolf.online/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pureimpactgolf.online/" />
   <meta property="og:title" content="One Online Golf Lesson + Follow-Up | Pure Impact Golf" />
@@ -164,6 +166,11 @@
     .final .cta:hover{background:var(--panel2)}
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
     .contact{color:var(--gold)}
+    .footer-inner{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;flex-wrap:wrap}
+    .footer-links{display:flex;flex-wrap:wrap;gap:10px 18px}
+    .footer-links a{color:var(--muted);text-decoration:none}
+    .footer-links a:hover{color:var(--gold)}
+    .result-note{display:block;margin-top:12px;color:var(--muted);font-size:14px}
     @media (max-width:860px){
       .steps{grid-template-columns:1fr}
       .fit-list{grid-template-columns:1fr}
@@ -191,7 +198,7 @@
 <header class="topbar">
   <div class="wrap topbar-inner">
     <div class="brand">PURE IMPACT <span>GOLF</span></div>
-    <a class="mini-cta" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">Start My Lesson</a>
+    <a class="mini-cta" data-event="checkout_top" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">Start My Lesson</a>
   </div>
 </header>
 
@@ -207,9 +214,9 @@
         <div class="offer-note">One personal lesson + one review · No subscription</div>
       </div>
 
-      <a class="cta" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
+      <a class="cta" data-event="checkout_hero" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
       <p class="after-payment">After payment, I’ll email you a private CoachNow invitation and simple instructions for sending your swing videos.</p>
-      <div class="trustline">Personal coaching through CoachNow · PGA Professional · 40+ years coaching</div>
+      <div class="trustline">Personal video coaching through CoachNow · No live call required · PGA Professional · 40+ years coaching</div>
     </div>
   </section>
 
@@ -229,7 +236,7 @@
       <div class="philosophy-video">
         <h3>My Golf Teaching Philosophy · 6 minutes</h3>
         <div class="philosophy-video-frame">
-          <button class="video-poster" type="button" aria-label="Play My Golf Teaching Philosophy" onclick="playControlsVideo(this)">
+          <button class="video-poster" data-event="philosophy_video_play" type="button" aria-label="Play My Golf Teaching Philosophy" onclick="playControlsVideo(this)">
             <img src="philosophy-video-poster.jpg?v=20261003-1550" alt="One swing doesn’t fit all — Grant Garrison’s golf teaching philosophy">
             <span class="video-play-icon" aria-hidden="true"></span>
           </button>
@@ -252,7 +259,7 @@
         <div class="step">
           <div class="num">1</div>
           <h3>Send Me Your Swing</h3>
-          <p>Share your swing videos through CoachNow and tell me what the ball is doing and what you want to improve.</p>
+          <p>Share your swing videos through CoachNow and tell me what the ball is doing and what you want to improve. A smartphone is all you need.</p>
         </div>
         <div class="step">
           <div class="num">2</div>
@@ -289,7 +296,8 @@
       <div class="kicker">Client experience</div>
       <blockquote>
         “Online coaching with Grant has been a really positive experience. The feedback is clear, easy to understand, and gives me something practical to work on. I’d happily recommend it to golfers looking to improve.”
-        <cite>— Richard</cite>
+        <cite>— Richard · Handicap 15 to 9 in under three months</cite>
+        <span class="result-note">Individual results vary.</span>
       </blockquote>
     </div>
   </section>
@@ -311,12 +319,12 @@
 
       <details>
         <summary>What should I send?</summary>
-        <p>Send face-on and down-the-line swing videos if possible, along with a description of the shot or strike you want to improve. The more clearly you describe what the ball is doing, the more useful my assessment can be.</p>
+        <p>A smartphone is all you need. Send face-on and down-the-line swing videos if possible, along with a description of the shot or strike you want to improve. The more clearly you describe what the ball is doing, the more useful my assessment can be.</p>
       </details>
 
       <details>
         <summary>How does CoachNow work?</summary>
-        <p>CoachNow is the private space where you send your swing videos and I provide your lesson, practice priority and follow-up review.</p>
+        <p>CoachNow is the private space where you send your swing videos and I provide recorded personal feedback, your practice priority and your follow-up review. This is flexible, asynchronous coaching—not a scheduled live call.</p>
       </details>
 
       <details>
@@ -326,7 +334,7 @@
 
       <details>
         <summary>When do I send my follow-up swing?</summary>
-        <p>Your follow-up review can be used anytime within two weeks of purchase. Practise your Control, then send an updated swing video through CoachNow when you are ready for me to review your progress.</p>
+        <p>Your follow-up review can be used anytime within two weeks of receiving your first lesson. Practise your Control, then send an updated swing video through CoachNow when you are ready for me to review your progress.</p>
       </details>
 
       <details>
@@ -345,16 +353,24 @@
         <div class="price">US$99</div>
         <div class="offer-note">One payment · No subscription</div>
       </div>
-      <a class="cta" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
+      <a class="cta" data-event="checkout_final" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
       <p class="after-payment">After payment, I’ll email you a private CoachNow invitation and simple instructions. Your personal lesson will be delivered within 48 hours after I receive your swing videos.</p>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div>© 2026 Pure Impact Golf · Grant Garrison PGA</div>
-    <div style="margin-top:8px">Questions? <a class="contact" href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a></div>
+  <div class="wrap footer-inner">
+    <div>
+      <div>© 2026 Pure Impact Golf · Grant Garrison PGA</div>
+      <div style="margin-top:8px">Questions? <a class="contact" href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a></div>
+    </div>
+    <nav class="footer-links" aria-label="Policies">
+      <a href="/delivery.html">Delivery</a>
+      <a href="/refunds.html">Refunds</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
   </div>
 </footer>
 
