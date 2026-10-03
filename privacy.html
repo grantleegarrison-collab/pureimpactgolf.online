@@ -47,7 +47,11 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       if (!localStorage.getItem('pig_analytics_consent')) {
-        document.getElementById('cookie-choice')?.removeAttribute('hidden');
+        window.setTimeout(() => {
+          if (!localStorage.getItem('pig_analytics_consent')) {
+            document.getElementById('cookie-choice')?.removeAttribute('hidden');
+          }
+        }, 10000);
       }
       document.querySelectorAll('[data-event]').forEach(element => {
         element.addEventListener('click', () => {
