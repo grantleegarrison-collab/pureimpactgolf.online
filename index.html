@@ -115,8 +115,11 @@
     .philosophy-video{max-width:420px;margin:34px auto 0}
     .philosophy-video h3{text-align:center;font-size:22px;margin:0 0 14px}
     .philosophy-video-frame{aspect-ratio:9/16;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#000;box-shadow:0 20px 50px rgba(0,0,0,.28)}
-    .video-poster{display:block;width:100%;height:100%;padding:0;border:0;background:#071725;cursor:pointer}
+    .video-poster{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:#071725;cursor:pointer}
     .video-poster img{display:block;width:100%;height:100%;object-fit:cover}
+    .video-play-icon{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.94);box-shadow:0 8px 28px rgba(0,0,0,.42);display:grid;place-items:center;transition:transform .18s ease,background .18s ease;pointer-events:none}
+    .video-play-icon::after{content:"";display:block;margin-left:6px;border-top:14px solid transparent;border-bottom:14px solid transparent;border-left:22px solid #071725}
+    .video-poster:hover .video-play-icon,.video-poster:focus-visible .video-play-icon{transform:translate(-50%,-50%) scale(1.08);background:#fff}
     .video-poster:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     .philosophy-video-frame iframe{display:block;width:100%;height:100%;border:0}
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
@@ -237,6 +240,7 @@
         <div class="philosophy-video-frame">
           <button class="video-poster" type="button" aria-label="Play My Golf Teaching Philosophy" onclick="playControlsVideo(this)">
             <img src="philosophy-video-poster.jpg?v=20261003-1550" alt="One swing doesn’t fit all — Grant Garrison’s golf teaching philosophy">
+            <span class="video-play-icon" aria-hidden="true"></span>
           </button>
         </div>
       </div>
