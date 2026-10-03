@@ -137,20 +137,8 @@
     .fit-item{padding:24px;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:20px;background:var(--panel)}
     .fit-item strong{display:block;font-size:19px;margin-bottom:6px;color:var(--text)}
     .fit-item span{color:var(--muted)}
-    .coach{
-      display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center
-    }
-    .coach-visual{position:relative}
-    .coach-photo{
-      width:100%;display:block;aspect-ratio:4/5;object-fit:cover;
-      border-radius:28px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.3)
-    }
-    .coach-badge{
-      position:absolute;right:-18px;bottom:24px;background:var(--gold);color:var(--ink);
-      padding:18px 22px;border-radius:18px;box-shadow:0 14px 36px rgba(0,0,0,.28)
-    }
-    .coach-badge strong{display:block;font-size:34px;line-height:1}
-    .coach-badge span{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .coach{max-width:780px}
+    .coach-copy{padding:34px;border:1px solid var(--line);border-radius:24px;background:var(--panel)}
     .credentials{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
     .credential{border:1px solid rgba(200,162,74,.45);color:var(--gold2);padding:9px 13px;border-radius:999px;font-size:14px;font-weight:800}
     .faq details{
@@ -173,10 +161,7 @@
     .contact{color:var(--gold)}
     @media (max-width:860px){
       .steps{grid-template-columns:1fr}
-      .coach{grid-template-columns:1fr}
       .fit-list{grid-template-columns:1fr}
-      .coach-visual{max-width:560px}
-      .coach-badge{right:18px}
     }
     @media (max-width:600px){
       .hero{min-height:700px;padding:76px 0 46px}
@@ -192,7 +177,7 @@
       .trustbar-grid{grid-template-columns:1fr}
       .trust-item{border-right:0;border-bottom:1px solid var(--line);padding:17px}
       .trust-item:last-child{border-bottom:0}
-      .coach-badge{right:12px;bottom:14px}
+      .coach-copy{padding:26px}
     }
   </style>
 </head>
@@ -279,17 +264,14 @@
 
   <section class="section">
     <div class="wrap coach">
-      <div class="coach-visual">
-        <img class="coach-photo" src="2-portrait.jpg" alt="Grant Garrison coaching on the golf course" loading="lazy">
-        <div class="coach-badge"><strong>40+</strong><span>Years coaching</span></div>
-      </div>
-      <div>
+      <div class="coach-copy">
         <div class="kicker">Your coach</div>
         <h2>Grant Garrison</h2>
         <p>Every golfer is different. What works for somebody else may not be what your swing needs.</p>
         <p>After more than 40 years of teaching, I don’t believe in forcing every golfer into the same model. My job is to understand your ball flight and impact, explain what I see in plain language, and help you find the Control that makes sense for your game.</p>
         <div class="credentials">
           <span class="credential">PGA Professional</span>
+          <span class="credential">40+ Years Coaching</span>
           <span class="credential">Personal CoachNow Feedback</span>
         </div>
       </div>
