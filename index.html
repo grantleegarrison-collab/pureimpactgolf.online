@@ -225,13 +225,36 @@
       gtag('config', GA_MEASUREMENT_ID, { transport_type: 'beacon' });
     }
 
-    function setAnalyticsConsent(choice) {
-      localStorage.setItem('pig_analytics_consent', choice);
-      document.getElementById('cookie-choice')?.setAttribute('hidden', '');
-      if (choice === 'granted') loadAnalytics();
+    function clearAnalyticsCookies() {
+      const names = document.cookie.split(';')
+        .map(cookie => cookie.split('=')[0].trim())
+        .filter(name => /^_ga(?:_|$)/.test(name));
+      const domains = [null, location.hostname, '.' + location.hostname];
+      names.forEach(name => domains.forEach(domain => {
+        document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax' +
+          (domain ? '; domain=' + domain : '');
+      }));
     }
 
-    if (localStorage.getItem('pig_analytics_consent') === 'granted') loadAnalytics();
+    function showAnalyticsChoices() {
+      document.getElementById('cookie-choice')?.removeAttribute('hidden');
+    }
+
+    function setAnalyticsConsent(choice) {
+      localStorage.setItem('pig_analytics_consent', choice);
+      window['ga-disable-' + GA_MEASUREMENT_ID] = choice !== 'granted';
+      document.getElementById('cookie-choice')?.setAttribute('hidden', '');
+      if (choice === 'granted') {
+        loadAnalytics();
+      } else {
+        clearAnalyticsCookies();
+      }
+    }
+
+    const savedAnalyticsConsent = localStorage.getItem('pig_analytics_consent');
+    window['ga-disable-' + GA_MEASUREMENT_ID] = savedAnalyticsConsent !== 'granted';
+    if (savedAnalyticsConsent === 'granted') loadAnalytics();
+    if (savedAnalyticsConsent === 'denied') clearAnalyticsCookies();
 
     document.addEventListener('DOMContentLoaded', () => {
       if (!localStorage.getItem('pig_analytics_consent')) {
@@ -256,7 +279,7 @@
 <header class="topbar">
   <div class="wrap topbar-inner">
     <div class="brand">PURE IMPACT <span>GOLF</span></div>
-    <a class="mini-cta" data-event="checkout_top" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">Start My Lesson</a>
+    <a class="mini-cta" data-event="checkout_button_click_top" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">Start My Lesson</a>
   </div>
 </header>
 
@@ -272,7 +295,7 @@
         <div class="offer-note">One personal lesson + one review · No subscription</div>
       </div>
 
-      <a class="cta" data-event="checkout_hero" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
+      <a class="cta" data-event="checkout_button_click_hero" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
       <p class="after-payment">After payment, I’ll email you a private CoachNow invitation and simple instructions for sending your swing videos.</p>
       <div class="trustline">Personal video coaching through CoachNow · No live call required · PGA Professional · 40+ years coaching</div>
     </div>
@@ -294,7 +317,7 @@
       <div class="philosophy-video">
         <h3>My Golf Teaching Philosophy · 6 minutes</h3>
         <div class="philosophy-video-frame">
-          <button class="video-poster" data-event="philosophy_video_play" type="button" aria-label="Play My Golf Teaching Philosophy" onclick="playControlsVideo(this)">
+          <button class="video-poster" data-event="philosophy_video_play_click" type="button" aria-label="Play My Golf Teaching Philosophy" onclick="playControlsVideo(this)">
             <img src="philosophy-video-poster.jpg?v=20261003-1550" alt="One swing doesn’t fit all — Grant Garrison’s golf teaching philosophy">
             <span class="video-play-icon" aria-hidden="true"></span>
           </button>
@@ -411,7 +434,7 @@
         <div class="price">US$99</div>
         <div class="offer-note">One payment · No subscription</div>
       </div>
-      <a class="cta" data-event="checkout_final" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
+      <a class="cta" data-event="checkout_button_click_final" href="https://buy.stripe.com/3cI5kDfQyddV0tYfLi2Fa0s">START MY PERSONAL LESSON</a>
       <p class="after-payment">After payment, I’ll email you a private CoachNow invitation and simple instructions. Your personal lesson will be delivered within 48 hours after I receive your swing videos.</p>
     </div>
   </section>
@@ -424,6 +447,7 @@
       <div style="margin-top:8px">Questions? <a class="contact" href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a></div>
     </div>
     <nav class="footer-links" aria-label="Policies">
+      <a href="#" onclick="showAnalyticsChoices(); return false;">Analytics choices</a>
       <a href="/delivery.html">Delivery</a>
       <a href="/refunds.html">Refunds</a>
       <a href="/privacy.html">Privacy</a>
@@ -437,7 +461,8 @@
     const frame = button.parentElement;
     const iframe = document.createElement('iframe');
 
-    iframe.src = 'https://www.youtube.com/embed/T8VtDpq_Bqc?autoplay=1&rel=0';
+    iframe.src = 'https://www.youtube-nocookie.com/embed/T8VtDpq_Bqc?autoplay=1&rel=0';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     iframe.title = 'My Golf Teaching Philosophy: The Impact Conditions Are Universal, the Controls Are Personal';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.allowFullscreen = true;
@@ -448,7 +473,7 @@
 
 
 <div id="cookie-choice" class="cookie-choice" hidden role="dialog" aria-label="Website analytics choice">
-  <p>May I use Google Analytics to understand how people use this website? It helps improve the coaching information. You can accept or decline.</p>
+  <p>May I use Google Analytics to understand how people use this website? It helps improve the coaching information. Analytics runs only if you accept. Playing the philosophy video loads content from YouTube.</p>
   <div class="cookie-actions">
     <button class="cookie-accept" type="button" onclick="setAnalyticsConsent('granted')">Accept analytics</button>
     <button class="cookie-decline" type="button" onclick="setAnalyticsConsent('denied')">Decline</button>

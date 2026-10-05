@@ -37,13 +37,36 @@
       gtag('config', GA_MEASUREMENT_ID, { transport_type: 'beacon' });
     }
 
-    function setAnalyticsConsent(choice) {
-      localStorage.setItem('pig_analytics_consent', choice);
-      document.getElementById('cookie-choice')?.setAttribute('hidden', '');
-      if (choice === 'granted') loadAnalytics();
+    function clearAnalyticsCookies() {
+      const names = document.cookie.split(';')
+        .map(cookie => cookie.split('=')[0].trim())
+        .filter(name => /^_ga(?:_|$)/.test(name));
+      const domains = [null, location.hostname, '.' + location.hostname];
+      names.forEach(name => domains.forEach(domain => {
+        document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax' +
+          (domain ? '; domain=' + domain : '');
+      }));
     }
 
-    if (localStorage.getItem('pig_analytics_consent') === 'granted') loadAnalytics();
+    function showAnalyticsChoices() {
+      document.getElementById('cookie-choice')?.removeAttribute('hidden');
+    }
+
+    function setAnalyticsConsent(choice) {
+      localStorage.setItem('pig_analytics_consent', choice);
+      window['ga-disable-' + GA_MEASUREMENT_ID] = choice !== 'granted';
+      document.getElementById('cookie-choice')?.setAttribute('hidden', '');
+      if (choice === 'granted') {
+        loadAnalytics();
+      } else {
+        clearAnalyticsCookies();
+      }
+    }
+
+    const savedAnalyticsConsent = localStorage.getItem('pig_analytics_consent');
+    window['ga-disable-' + GA_MEASUREMENT_ID] = savedAnalyticsConsent !== 'granted';
+    if (savedAnalyticsConsent === 'granted') loadAnalytics();
+    if (savedAnalyticsConsent === 'denied') clearAnalyticsCookies();
 
     document.addEventListener('DOMContentLoaded', () => {
       if (!localStorage.getItem('pig_analytics_consent')) {
@@ -76,10 +99,10 @@
 <p>Nothing in this policy excludes, restricts or modifies any rights or remedies you may have under the Australian Consumer Law that cannot lawfully be excluded.</p>
 <h2>Requesting help</h2>
 <p>Email <a href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a> with the email address used for payment and a short explanation of your request.</p></div></main>
-<footer><div class="wrap">© 2026 Pure Impact Golf · Questions? <a href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a></div></footer>
+<footer><div class="wrap">© 2026 Pure Impact Golf · Questions? <a href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a> · <a href="#" onclick="showAnalyticsChoices(); return false;">Analytics choices</a></div></footer>
 
 <div id="cookie-choice" class="cookie-choice" hidden role="dialog" aria-label="Website analytics choice">
-  <p>May I use Google Analytics to understand how people use this website? It helps improve the coaching information. You can accept or decline.</p>
+  <p>May I use Google Analytics to understand how people use this website? It helps improve the coaching information. Analytics runs only if you accept. Playing the philosophy video loads content from YouTube.</p>
   <div class="cookie-actions">
     <button class="cookie-accept" type="button" onclick="setAnalyticsConsent('granted')">Accept analytics</button>
     <button class="cookie-decline" type="button" onclick="setAnalyticsConsent('denied')">Decline</button>
