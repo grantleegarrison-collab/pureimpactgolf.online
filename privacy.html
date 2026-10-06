@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Pure Impact Golf</title>
+  <meta name="description" content="How Pure Impact Golf collects and handles personal information." />
+  <meta name="theme-color" content="#071725" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root{--bg:#071725;--panel:#0d2234;--text:#f7f4ec;--muted:#b9c5cf;--gold:#e0b95c;--line:#27435a;--max:780px}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    header,footer{border-bottom:1px solid var(--line)} footer{border-top:1px solid var(--line);border-bottom:0;color:var(--muted)}
+    .wrap{max-width:var(--max);margin:auto;padding:24px} header .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .brand{font-weight:900;letter-spacing:.08em;font-size:14px}.brand span,a{color:var(--gold)} .home{text-decoration:none}
+    main{padding:58px 0 72px} h1{font-size:clamp(38px,7vw,60px);line-height:1.04;margin:0 0 12px} h2{font-size:24px;margin:38px 0 8px}
+    p,li{color:#d7e0e6;font-size:17px} .updated{color:var(--muted);margin-bottom:34px} ul{padding-left:22px}
+  
+    .cookie-choice{position:fixed;z-index:50;left:18px;right:18px;bottom:18px;max-width:680px;margin:auto;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#10283b;color:var(--text);box-shadow:0 16px 45px rgba(0,0,0,.45)}
+    .cookie-choice[hidden]{display:none}.cookie-choice p{margin:0 0 13px;font-size:14px;color:#d7e0e6}
+    .cookie-actions{display:flex;gap:10px;flex-wrap:wrap}.cookie-actions button{border:1px solid var(--gold);border-radius:999px;padding:10px 16px;font:inherit;font-weight:800;cursor:pointer}
+    .cookie-accept{background:var(--gold);color:#06111c}.cookie-decline{background:transparent;color:var(--text)}
+</style>
+  <script>
+    const GA_MEASUREMENT_ID = 'G-J4TDGVT1D5';
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    function loadAnalytics() {
+      if (window.pigAnalyticsLoaded) return;
+      window.pigAnalyticsLoaded = true;
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+      document.head.appendChild(script);
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, { transport_type: 'beacon' });
+    }
+
+    function setAnalyticsConsent(choice) {
+      localStorage.setItem('pig_analytics_consent', choice);
+      document.getElementById('cookie-choice')?.setAttribute('hidden', '');
+      if (choice === 'granted') loadAnalytics();
+    }
+
+    if (localStorage.getItem('pig_analytics_consent') === 'granted') loadAnalytics();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!localStorage.getItem('pig_analytics_consent')) {
+        window.setTimeout(() => {
+          if (!localStorage.getItem('pig_analytics_consent')) {
+            document.getElementById('cookie-choice')?.removeAttribute('hidden');
+          }
+        }, 10000);
+      }
+      document.querySelectorAll('[data-event]').forEach(element => {
+        element.addEventListener('click', () => {
+          if (localStorage.getItem('pig_analytics_consent') === 'granted') {
+            gtag('event', element.dataset.event, { page_location: location.href });
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">PURE IMPACT <span>GOLF</span></div><a class="home" href="/">Back to coaching</a></div></header>
+<main><div class="wrap">
+<h1>Privacy Policy</h1><div class="updated">Last updated 3 October 2026</div>
+<p>This policy explains how Pure Impact Golf handles the personal information you provide when using the website and personal online coaching service.</p>
+<h2>Information we collect</h2>
+<ul><li>Your name, email address and contact details.</li><li>Your swing videos, coaching messages, goals and information about your golf.</li><li>Purchase and service records. Pure Impact Golf does not receive or store your full card details.</li></ul>
+<h2>How we use it</h2>
+<p>We use this information to deliver and support your coaching, communicate with you, maintain business records, improve the service, and meet legal obligations.</p>
+<h2>Services we use</h2>
+<p>Stripe processes payments and CoachNow hosts coaching videos and communications. Those providers handle information under their own privacy terms and may process or store information outside Australia.</p>
+<h2>Website measurement and cookies</h2>
+<p>With your permission, this website uses Google Analytics to understand visits, page use and interactions such as selecting a lesson button or playing the philosophy video. Google Analytics may use cookies and process technical information such as device, browser and approximate location data. Analytics is not loaded unless you select “Accept analytics.” You may decline without affecting your use of the website.</p>
+<h2>Access, correction and questions</h2>
+<p>You may ask about, access or correct personal information held by Pure Impact Golf by emailing <a href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a>. We will take reasonable steps to protect the information we hold and respond to privacy questions or concerns.</p></div></main>
+<footer><div class="wrap">© 2026 Pure Impact Golf · Questions? <a href="mailto:contact@pureimpactgolf.online">contact@pureimpactgolf.online</a></div></footer>
+
+<div id="cookie-choice" class="cookie-choice" hidden role="dialog" aria-label="Website analytics choice">
+  <p>May I use Google Analytics to understand how people use this website? It helps improve the coaching information. You can accept or decline.</p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" type="button" onclick="setAnalyticsConsent('granted')">Accept analytics</button>
+    <button class="cookie-decline" type="button" onclick="setAnalyticsConsent('denied')">Decline</button>
+  </div>
+</div>
+</body></html>

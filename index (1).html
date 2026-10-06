@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure Impact Academy – Find the Swing That Works for You</title>
+<meta name="description" content="Join the Pure Impact Academy. Long-term online golf coaching led by PGA Professional Grant Garrison, built on one belief: every golfer can find the swing that works for them. First month just $1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --deep: #111813;
+    --green: #14241a;
+    --gold: #c8a24a;
+    --gold-bright: #e0b95c;
+    --white: #ffffff;
+    --off: #c9c9c2;
+    --fog: #8a8a82;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--white); background: var(--black); line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, .condensed { font-family: 'Barlow Condensed', sans-serif; }
+
+  nav { position: fixed; top: 0; width: 100%; background: rgba(10,10,10,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(200,162,74,0.2); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+  .nav-links a { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--off); font-weight: 500; }
+  .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.55rem 1.3rem; border-radius: 2px; font-weight: 700; }
+
+  /* HERO with banner image */
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding-top: 64px; }
+  .hero-bg { position: absolute; inset: 0; background: url('0-impact-banner.jpg') center/cover no-repeat; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.55) 45%, rgba(10,10,10,0.25) 100%); }
+  .hero-inner { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 5rem; }
+  .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .hero-headline { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 900; text-transform: uppercase; line-height: 0.92; margin-bottom: 1.5rem; max-width: 16ch; }
+  .hero-headline span { color: var(--gold); }
+  .hero-sub { font-size: 1.15rem; line-height: 1.7; color: var(--off); margin-bottom: 2.5rem; max-width: 540px; }
+  .hero-offer { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.04em; color: var(--gold-bright); margin-top: 1.2rem; }
+
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--black); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.95rem 2rem; border-radius: 2px; transition: background 0.2s; }
+  .btn-gold:hover { background: var(--gold-bright); }
+  .btn-black { display: inline-block; background: var(--black); color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.95rem 2.2rem; border-radius: 2px; }
+  .btn-black:hover { background: #222; }
+
+  section { padding: 6rem 2.5rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .headline { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 900; text-transform: uppercase; line-height: 0.98; margin-bottom: 1.5rem; }
+  .headline span { color: var(--gold); }
+  .body-text { color: var(--off); max-width: 62ch; line-height: 1.8; font-size: 1.05rem; }
+  .body-text + .body-text { margin-top: 1rem; }
+
+  .deep { background: var(--deep); }
+  .green-bg { background: var(--green); }
+
+  .big-quote { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 700; font-style: italic; color: var(--gold); line-height: 1.3; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin: 2rem 0; }
+
+  .outcome-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .outcome { padding: 1.8rem; background: rgba(200,162,74,0.06); border: 1px solid rgba(200,162,74,0.15); border-radius: 4px; }
+  .outcome h3 { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: var(--white); margin-bottom: 0.5rem; }
+  .outcome p { font-size: 0.95rem; line-height: 1.6; color: var(--fog); }
+
+  .claim-list { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+  .claim-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--off); }
+  .claim-list li::before { content: "\2192"; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+  .claim-list strong { color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
+
+  /* HOW IT WORKS */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .step { text-align: center; padding: 2rem 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(200,162,74,0.15); border-radius: 6px; }
+  .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .step h3 { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; margin: 0.5rem 0 0.6rem; }
+  .step p { font-size: 0.95rem; color: var(--fog); line-height: 1.6; }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: center; }
+  .about-img { width: 100%; border-radius: 4px; display: block; }
+  .about-head { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); margin-bottom: 1.5rem; }
+
+  .proof { text-align: center; }
+  .proof-number { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(6rem, 14vw, 11rem); font-weight: 900; color: var(--gold); line-height: 0.85; }
+  .proof-label { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; }
+  .proof .body-text { margin: 0 auto; text-align: left; max-width: 600px; }
+
+  .cta-strip { background: var(--gold); color: var(--black); text-align: center; padding: 5rem 2.5rem; }
+  .cta-strip h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 1rem; }
+  .cta-strip p { color: #3a2e10; max-width: 60ch; margin: 0 auto 2rem; font-size: 1.05rem; }
+  .video-wrap { position: relative; width: 100%; max-width: 760px; margin: 0 auto 2.5rem; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  .join { text-align: center; }
+  .price-card { display: inline-block; background: var(--deep); border: 1px solid var(--gold); color: var(--white); padding: 2.5rem 3.5rem; border-radius: 6px; margin: 2.5rem 0 1.5rem; }
+  .price-card .price { font-family: 'Barlow Condensed', sans-serif; font-size: 4rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .price-card .price span { font-size: 1rem; color: var(--fog); font-family: 'Inter', sans-serif; }
+  .price-card .price-label { font-size: 1rem; color: var(--off); margin: 0.5rem 0 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .price-card .price-after { font-size: 0.95rem; color: var(--fog); margin: 0.3rem 0 1.5rem; }
+  .join-note { font-size: 0.85rem; color: var(--fog); margin-top: 1.5rem; }
+  .scarcity-line { font-style: italic; color: var(--off); max-width: 60ch; margin: 1.8rem auto 0; font-size: 1rem; line-height: 1.7; }
+
+  .contact { text-align: center; }
+  .contact a.email { color: var(--gold); font-size: 1.2rem; font-weight: 600; border-bottom: 1px solid var(--gold); }
+
+  footer { background: var(--black); border-top: 1px solid rgba(200,162,74,0.2); color: var(--fog); text-align: center; padding: 2.5rem; font-size: 0.85rem; }
+  footer a { color: var(--gold); margin: 0 0.6rem; }
+
+  @media (max-width: 800px) {
+    .hero-inner { padding: 0 1.5rem 3.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .steps { grid-template-columns: 1fr; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    nav { padding: 0 1rem; }
+    section { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">PURE <span>IMPACT</span> ACADEMY</div>
+  <div class="nav-links">
+    <a href="#philosophy">Philosophy</a>
+    <a href="#academy">The Academy</a>
+    <a href="#how">How It Works</a>
+    <a href="#join" class="nav-cta">Come In For $1</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Pure Impact Academy</p>
+    <h1 class="hero-headline">Find the swing that <span>works for you.</span></h1>
+    <p class="hero-sub">Join a small group of golfers learning to improve where it actually counts &mdash; at impact. Come inside for a month and see if it's your kind of place.</p>
+    <a href="https://buy.stripe.com/9B66oH33M4Hp5OieHe2Fa0l?prefilled_promo_code=VISIT" class="btn-gold">Come In For $1 &rarr;</a>
+    <p class="hero-offer">First month just $1, then US$39/month. Cancel anytime.</p>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="deep">
+  <div class="container">
+    <p class="eyebrow">The Stance</p>
+    <h2 class="headline">Most instruction has it <span>backwards.</span></h2>
+    <p class="body-text">Mainstream teaching obsesses over swing positions and perfect form. After 40 years on lesson tees, I've watched too many good golfers get buried under positions, angles, and checklists &mdash; chasing someone else's idea of a "correct" swing while their own game falls apart.</p>
+    <div class="big-quote">I teach the opposite. Master what happens at impact, and the ball obeys.</div>
+    <p class="body-text">That's the truth I'm happy to ruffle a few feathers telling. It's the belief this whole Academy is built on.</p>
+    <div class="video-wrap" style="margin-top:3rem;margin-bottom:0;">
+      <iframe src="https://www.youtube.com/embed/9LaL6h5PjCg?si=1s9T88hiyZdun2Fn" title="Pure Impact Golf demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="container">
+    <p class="eyebrow">The Philosophy</p>
+    <h2 class="headline">I don't teach the golf swing. <span>I teach impact.</span></h2>
+    <p class="body-text">That simple belief is the foundation of everything I do at Pure Impact Golf. Every golfer is different, so I don't force players into a "model" swing. Instead, I focus on the moment that truly matters &mdash; the instant the club meets the ball.</p>
+    <p class="body-text">I won't make a swing change unless it improves an impact condition, because when impact improves, so does ball control. My job is to help you understand why the ball does what it does, and how to make lasting improvements &mdash; not chase quick fixes.</p>
+    <p class="body-text">My role is to simplify the game, strip away the unnecessary complexity, and give you a clear pathway to better golf. The mission is straightforward: help you become a better ball striker &mdash; the single biggest influence on your score.</p>
+  </div>
+</section>
+
+<!-- WHY LONG TERM -->
+<section class="green-bg">
+  <div class="container">
+    <p class="eyebrow">Why The Academy</p>
+    <h2 class="headline">One lesson won't fix <span>your golf.</span></h2>
+    <p class="body-text">In 40 years of coaching, I've learned a hard truth: very few golfers get meaningfully better from a single swing diagnosis. Real improvement takes time. It comes from staying on the right path &mdash; with the right information, reinforced consistently, week after week.</p>
+    <p class="body-text">That's exactly what the Academy is. I keep you on track. Sometimes that's a quick comment on a swing you've posted; other times it's a full video breakdown. Either way, you're never left guessing or drifting back into old habits.</p>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section>
+  <div class="container">
+    <p class="eyebrow">What You're Really After</p>
+    <h2 class="headline">This is what it feels like <span>to flush it.</span></h2>
+    <div class="outcome-grid">
+      <div class="outcome"><h3>Flushed Contact</h3><p>That pure, compressed strike &mdash; consistently, not once a round.</p></div>
+      <div class="outcome"><h3>Ball at the Flag</h3><p>A ball flight you can aim with confidence and trust under pressure.</p></div>
+      <div class="outcome"><h3>Control Over 18</h3><p>A swing that holds up on the back nine when the round is on the line.</p></div>
+      <div class="outcome"><h3>Your Lowest Scores</h3><p>The rounds you've always believed were in there &mdash; finally on the card.</p></div>
+      <div class="outcome"><h3>Your Best Round Ever</h3><p>Not a fluke. A repeatable result you understand and can come back to.</p></div>
+      <div class="outcome"><h3>Golf for Life</h3><p>Great golf deep into your senior years, without punishing your body.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE THE ACADEMY -->
+<section class="deep" id="academy">
+  <div class="container">
+    <p class="eyebrow">Inside the Academy</p>
+    <h2 class="headline">A small group. <span>Closer to me.</span></h2>
+    <p class="body-text">It's not a video library you watch alone, and it's not a one-off swing review. It's a small, private group of like-minded golfers &mdash; led by me &mdash; all working on the same thing in the same way, inside the CoachNow app.</p>
+    <ul class="claim-list">
+      <li><div><strong>Swing Submission</strong>Upload your golf swing and get regular evaluation from me &mdash; so you always know what's working and what's next.</div></li>
+      <li><div><strong>Tips &amp; Lessons</strong>Posted regularly in the group &mdash; clear, practical coaching you can take straight to the range.</div></li>
+      <li><div><strong>Wins &amp; Achievements</strong>Celebrate the breakthroughs together. Every good round and small victory gets shared with the group.</div></li>
+      <li><div><strong>Q&amp;A</strong>Ask your questions and let's have a conversation &mdash; real answers from me, not a faceless app.</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <p class="eyebrow">How It Works</p>
+    <h2 class="headline">Getting started <span>is simple.</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Come In For $1</h3>
+        <p>Your first month is just $1. Join in a couple of minutes, cancel anytime.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Download CoachNow</h3>
+        <p>Grab the free CoachNow app &mdash; it's where the group and all your coaching lives.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Get Welcomed In</h3>
+        <p>I'll welcome you into the group personally and help you get settled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="deep">
+  <div class="container">
+    <p class="eyebrow">Your Coach</p>
+    <div class="about-grid">
+      <div>
+        <img src="2-portrait.jpg" alt="Grant Garrison on the course" class="about-img">
+      </div>
+      <div>
+        <img src="3-headshot.jpg" alt="Grant Garrison headshot" class="about-head">
+        <h2 class="headline" style="font-size:2.2rem;">Grant Garrison</h2>
+        <p class="eyebrow" style="margin-top:0.3rem;">PGA Professional &middot; 40 Years Coaching</p>
+        <p class="body-text" style="margin-top:1.2rem;">Pure Impact Academy was built for golfers who are tired of chasing quick fixes and ready to make real, lasting improvement. My coaching is designed to simplify the game by focusing on what truly matters &mdash; helping you understand your swing, improve your impact, and play your best golf with confidence, all alongside a community that's on the same journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="green-bg proof">
+  <div class="container">
+    <div class="proof-number">12</div>
+    <p class="proof-label">Swings. One Ball Flight.</p>
+    <p class="body-text">It's the demonstration that captures everything I teach. Twelve swings &mdash; no tips, no positions, no mechanical checklists &mdash; all producing the same ball flight. Master impact, and the rest follows.</p>
+  </div>
+</section>
+
+<!-- YOUTUBE -->
+<div class="cta-strip">
+  <h2>Start with the free videos.<br>Decide for yourself.</h2>
+  <p>Watch what happens when I swing 12 different ways and produce the same ball flight.</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/MH1O-wwzMZc?si=uo9GMq3naPBVMTz5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <a href="https://www.youtube.com/@PureImpactGolf" target="_blank" rel="noopener" class="btn-black">More Free Videos on YouTube &rarr;</a>
+</div>
+
+<!-- JOIN -->
+<section class="join" id="join">
+  <div class="container">
+    <p class="eyebrow">Come For a Visit</p>
+    <h2 class="headline">Come in for a month and <span>see if it's your kind of place.</span></h2>
+    <p class="body-text" style="margin:0 auto;">A dollar gets you inside: meet the group, see how I coach, and decide for yourself. No pressure either way.</p>
+    <div class="price-card">
+      <div class="price">$1<span> first month</span></div>
+      <div class="price-label">Pure Impact Academy Membership</div>
+      <div class="price-after">then US$39/month &middot; cancel anytime</div>
+      <a href="https://buy.stripe.com/9B66oH33M4Hp5OieHe2Fa0l?prefilled_promo_code=VISIT" class="btn-gold">Come In For $1 &rarr;</a>
+    </div>
+    <p class="scarcity-line">I keep each group small and personal &mdash; so I genuinely know every golfer in it. When the current group is full, it closes, and the next person joins a waitlist for the next one to open.</p>
+    <p class="join-note">Cancel anytime. No contracts. No gimmicks.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="deep contact">
+  <div class="container">
+    <p class="eyebrow">Get in Touch</p>
+    <h2 class="headline">Questions before <span>you visit?</span></h2>
+    <p class="body-text" style="margin:0 auto 1.5rem;">Reach out anytime &mdash; I'm happy to help you decide if the Academy is right for you.</p>
+    <a href="mailto:contact@pureimpactgolf.online" class="email">contact@pureimpactgolf.online</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Pure Impact Golf &middot; Grant Garrison PGA</p>
+  <div style="margin-top:0.6rem;">
+    <a href="https://www.youtube.com/@PureImpactGolf" target="_blank" rel="noopener">YouTube</a>
+    <a href="mailto:contact@pureimpactgolf.online">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
