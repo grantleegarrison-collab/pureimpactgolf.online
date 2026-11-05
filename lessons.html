@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Burleigh Golf Lessons &amp; Clinics | Pure Impact Golf</title>
-<meta name="description" content="Join group golf clinics, junior programs and private lessons at Burleigh Driving Range with Pure Impact Golf. All abilities welcome.">
+<meta name="description" content="Custom group golf lessons at Burleigh Driving Range for every ability, from beginners to experts. Build your group and request availability and rates.">
 <meta name="theme-color" content="#103d2c">
 <link rel="canonical" href="https://pureimpactgolf.online/lessons">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,13 +85,80 @@ footer{padding:28px 0;background:var(--green);color:#f5f1e7;font-size:.85rem;bor
 .local-social-icon svg{width:26px;height:26px;fill:currentColor}
 .local-social-copy{display:block;line-height:1.15}.local-social-copy small{display:block;margin-top:5px;color:rgba(255,255,255,.88);font-size:.78rem;font-weight:650}
 @media(max-width:700px){.local-social-actions{grid-template-columns:1fr}.local-social-btn{width:100%}}
+
+/* Custom group lesson enquiry */
+.group-request{background:linear-gradient(135deg,#103d2c,#285a42);color:#f5f1e7}
+.group-request h2{color:#fffdf7}
+.group-request .eyebrow{color:#e0b95c}
+.group-request-intro{max-width:760px;color:#e2e8e1}
+.group-request-card{max-width:920px;margin-top:28px;padding:30px;background:#fffdf7;color:var(--ink);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.15)}
+.group-request-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.group-field{display:flex;flex-direction:column;gap:7px}
+.group-field label{font-size:.9rem;font-weight:750}
+.group-field input,.group-field select{width:100%;min-height:48px;padding:11px 13px;border:1px solid #cfc8b8;border-radius:9px;background:#fff;color:var(--ink);font:inherit}
+.group-field input:focus,.group-field select:focus{outline:3px solid rgba(200,162,74,.35);border-color:var(--gold)}
+.group-form-submit{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+.group-form-submit .btn{border:0;cursor:pointer;font:inherit}
+.group-form-note{margin:0;color:#68756d;font-size:.86rem}
+@media(max-width:650px){.group-request-card{padding:22px}.group-request-form{grid-template-columns:1fr}.group-form-submit{grid-column:auto}.group-form-submit .btn{width:100%}}
+
 </style>
 </head>
 <body>
-<nav><div class="wrap nav-inner"><a class="logo" href="https://pureimpactgolf.online">PURE IMPACT <span>GOLF</span></a><div class="nav-links"><a href="#upcoming-clinics">Upcoming clinics</a><a href="/lesson-rates">Book a Lesson</a><a href="#all-abilities">All Abilities</a><a href="#coaches">Coaches</a><a href="#venue">The venue</a></div></div></nav>
-<header class="hero"><div class="wrap hero-grid"><div class="hero-copy"><div class="eyebrow">Pure Impact Golf · At Burleigh Driving Range</div><h1>BETTER GOLF.<br><span class="accent">TOGETHER.</span></h1><div class="location-row"><span></span>Group clinics at Burleigh Driving Range</div><p>Join the Pure Impact team for practical group coaching at Burleigh Driving Range, with weekly clinics for all ability levels and private lessons available.</p><div class="actions"><a class="btn btn-gold" href="https://whatsapp.com/channel/0029VbDYOBqIN9ilXX1ECj1r" target="_blank" rel="noopener">Get new clinic alerts on WhatsApp</a><a class="btn btn-light" href="/lesson-rates">Book a Lesson</a></div><p class="hero-note">Clinic announcements are shared on WhatsApp. Places are booked securely through Humanitix.</p></div><div class="hero-photo"><img src="assets/coaches-together.webp?v=20261008" alt="Grant Garrison and James Deacon from Pure Impact Golf"><div class="photo-label">Grant Garrison &amp; James Deacon · Pure Impact Golf</div></div></div></header>
+<nav><div class="wrap nav-inner"><a class="logo" href="https://pureimpactgolf.online">PURE IMPACT <span>GOLF</span></a><div class="nav-links"><a href="#upcoming-clinics">Upcoming clinics</a><a class="btn btn-gold" href="#group-request">Plan a group lesson</a><a href="#all-abilities">All Abilities</a><a href="#coaches">Coaches</a><a href="#venue">The venue</a></div></div></nav>
+<header class="hero"><div class="wrap hero-grid"><div class="hero-copy"><div class="eyebrow">Pure Impact Golf · At Burleigh Driving Range</div><h1>YOUR GROUP.<br><span class="accent">YOUR GAME.</span></h1><div class="location-row"><span></span>Custom group golf lessons · Burleigh Driving Range</div><p>Bring family or friends together for a lesson shaped around your group. Every ability is welcome, from complete beginners to experienced golfers. You do not need to be at the same level; each student receives individual coaching and guidance within the group session.</p><div class="actions"><a class="btn btn-gold" href="#group-request">Plan your group lesson</a><a class="btn btn-light" href="#upcoming-clinics">See upcoming clinics</a></div><p class="hero-note">Tell us your preferred schedule and we’ll reply with availability and rates. Your request is not a confirmed booking.</p></div><div class="hero-photo"><img src="assets/coaches-together.webp?v=20261008" alt="Grant Garrison and James Deacon from Pure Impact Golf"><div class="photo-label">Grant Garrison &amp; James Deacon · Pure Impact Golf</div></div></div></header>
 
 <main>
+
+<section class="group-request" id="group-request" aria-labelledby="group-request-title">
+  <div class="wrap">
+    <div class="eyebrow">Create your own group</div>
+    <h2 id="group-request-title">Plan a lesson around your group.</h2>
+    <p class="group-request-intro">From beginners to experts, every ability level is welcome. Groups can include golfers at different stages, with each student receiving individual coaching and guidance during the session. Complete this short form and Grant will reply with availability and rates.</p>
+    <div class="group-request-card">
+      <form class="group-request-form" id="group-lesson-form">
+        <div class="group-field">
+          <label for="group-name">Your name</label>
+          <input id="group-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="group-field">
+          <label for="group-size">How many students are in your group?</label>
+          <input id="group-size" name="groupSize" type="number" min="2" max="30" inputmode="numeric" placeholder="For example, 4" required>
+        </div>
+        <div class="group-field">
+          <label for="lesson-length">How long would you like each lesson?</label>
+          <select id="lesson-length" name="lessonLength" required>
+            <option value="">Choose a lesson length</option>
+            <option>1 hour</option>
+            <option>90 minutes</option>
+            <option>2 hours</option>
+          </select>
+        </div>
+        <div class="group-field">
+          <label for="lessons-week">How many lessons per week?</label>
+          <select id="lessons-week" name="lessonsPerWeek" required>
+            <option value="">Choose a frequency</option>
+            <option>1 lesson per week</option>
+            <option>2 lessons per week</option>
+            <option>3 lessons per week</option>
+          </select>
+        </div>
+        <div class="group-field">
+          <label for="program-weeks">How many weeks would you like?</label>
+          <input id="program-weeks" name="weeks" type="number" min="1" max="52" inputmode="numeric" placeholder="For example, 4" required>
+        </div>
+        <div class="group-field">
+          <label for="preferred-time">What day and time works best?</label>
+          <input id="preferred-time" name="preferredTime" type="text" placeholder="For example, Wednesday evening" required>
+        </div>
+        <div class="group-form-submit">
+          <button class="btn btn-gold" type="submit">Request availability and rates</button>
+          <p class="group-form-note">This opens WhatsApp with your answers ready. Review the message and press Send to contact Grant.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 <section class="local-community" aria-labelledby="local-community-heading"><div class="wrap local-community-inner"><div class="eyebrow">For Gold Coast golfers</div><h2 id="local-community-heading">Follow Burleigh Golf Lessons</h2><p>Get local lesson updates, upcoming clinic dates and golf coaching news from Burleigh Driving Range.</p><div class="local-social-actions"><a class="local-social-btn local-social-btn--facebook" href="https://www.facebook.com/share/19rfV5PkNS/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Follow Pure Impact Golf Burleigh on Facebook"><span class="local-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V14h2.8v8h3.4z"/></svg></span><span class="local-social-copy">Follow on Facebook<small>Pure Impact Golf – Burleigh</small></span></a><a class="local-social-btn local-social-btn--instagram" href="https://www.instagram.com/burleighgolflessons/" target="_blank" rel="noopener" aria-label="Follow Burleigh Golf Lessons on Instagram"><span class="local-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.1 1.5a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></span><span class="local-social-copy">Follow on Instagram<small>@burleighgolflessons</small></span></a></div></div></section>
 <section class="upcoming-clinics" id="upcoming-clinics" aria-labelledby="upcoming-clinics-heading"><div class="wrap"><div class="section-intro"><div class="eyebrow">Book your place</div><h2 id="upcoming-clinics-heading">Upcoming clinics</h2><p>Choose a session and book your place at Burleigh Driving Range.</p></div><div class="clinic-grid"><article class="clinic-card"><div class="clinic-date">Wednesdays · Ongoing</div><h3>Wednesday Morning Golf Clinic</h3><p>11:00 am–12:00 pm · Burleigh Driving Range</p><p class="clinic-details">All abilities · Range balls included · $49 per person</p><a class="btn btn-gold" href="https://events.humanitix.com/wednesday-morning-golf-clinic-at-burleigh-driving-range" target="_blank" rel="noopener">Book this clinic on Humanitix</a></article><article class="clinic-card"><div class="clinic-date">Sunday · 6 December 2026</div><h3>Sunday Golf Clinic</h3><p>9:00–10:00 am · Burleigh Driving Range</p><p class="clinic-details">All abilities · $20 per person</p><a class="btn btn-gold" href="https://events.humanitix.com/sunday-golf-clinic" target="_blank" rel="noopener">Book this clinic on Humanitix</a></article></div><div class="clinic-alerts"><p>Can’t attend these dates? Join our WhatsApp community to hear when the next clinics open.</p><a class="btn btn-light" href="https://whatsapp.com/channel/0029VbDYOBqIN9ilXX1ECj1r" target="_blank" rel="noopener">Get future clinic alerts on WhatsApp</a></div></div></section>
 <section id="junior-programs"><div class="wrap"><article class="program-card program-card--junior junior-feature"><div class="junior-photo"><img src="assets/grant-junior-coaching.jpg?v=20261009" alt="Grant Garrison coaching a young golfer on the course" loading="lazy"></div><div class="junior-copy"><div class="eyebrow">Junior golf</div><div class="junior-status">Upcoming</div><h2>Junior Golf Academy</h2><p>Our Junior Golf Academy is currently in development. Register your interest to receive updates about the planned after-school coaching, school holiday camps and on-course playing lessons.</p><ul class="junior-programs"><li>After-school academy</li><li>School holiday camps</li><li>On-course playing lessons</li></ul><a class="btn btn-gold" href="https://wa.me/61421287826?text=Hi%20Grant%2C%20I%E2%80%99d%20like%20to%20register%20my%20interest%20in%20the%20upcoming%20Junior%20Golf%20Academy.%0A%0ANumber%20of%20children%3A%0AAges%3A%0ACurrent%20ability%20levels%3A%0APreferred%20days%20and%20times%20for%20group%20training%3A" target="_blank" rel="noopener">Register your interest</a></div></article></div></section>
@@ -102,5 +169,28 @@ footer{padding:28px 0;background:var(--green);color:#f5f1e7;font-size:.85rem;bor
 <section id="venue"><div class="wrap location"><div><div class="eyebrow">Find us on the Gold Coast</div><h2>Burleigh Driving Range</h2><p>Group clinics take place at Burleigh Driving Range. Places are limited, and full clinics move to a waitlist. Select an upcoming clinic above and book early to secure your place.</p></div><div class="location-badge">Burleigh Driving Range<br>150 Tallebudgera Creek Road<br>Tallebudgera QLD 4228<br><br><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Burleigh%20Driving%20Range%20150%20Tallebudgera%20Creek%20Road%20Tallebudgera%20QLD%204228" target="_blank" rel="noopener">Get directions</a><br><a class="text-link" href="https://www.burleighdrivingrange.com.au/" target="_blank" rel="noopener">Explore Burleigh Driving Range</a></div></div></section>
 </main>
 <footer><div class="wrap foot"><div>© 2026 Pure Impact Golf · Grant Garrison PGA · Gold Coast, Australia</div><div><a href="tel:+61421287826">0421 287 826</a> · <a href="mailto:contact@pureimpactgolf.online">Contact Grant</a></div></div></footer>
+
+<script>
+document.getElementById('group-lesson-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+  const data = new FormData(form);
+  const message = [
+    "Hi Grant, I’d like to arrange a custom group golf lesson at Burleigh Driving Range.",
+    "",
+    "Name: " + data.get("name"),
+    "Number of students: " + data.get("groupSize"),
+    "Lesson length: " + data.get("lessonLength"),
+    "Lessons per week: " + data.get("lessonsPerWeek"),
+    "Number of weeks: " + data.get("weeks"),
+    "Preferred day and time: " + data.get("preferredTime"),
+    "",
+    "Please let me know your availability and rates."
+  ].join("\n");
+  window.location.href = "https://wa.me/61421287826?text=" + encodeURIComponent(message);
+});
+</script>
+
 </body>
 </html>
